@@ -47,7 +47,7 @@ if __name__ == '__main__':
         print("Found proof:", new_proof)
         # TODO: When found, POST it to the server {"proof": new_proof}
         post_data = {"proof": new_proof}
-        req = requests.get(url=node+'/last_block', json=post_data)
+        req = requests.post(url=node+'/mine', json=post_data)
         data = req.json()
         print(data)
         # TODO: We're going to have to research how to do a POST in Python
